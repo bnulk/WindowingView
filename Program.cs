@@ -17,6 +17,8 @@
             //transformations.Run();
 
             //画d轨道
+            //WorkSpace_dOrbital dOrbital = new WorkSpace_dOrbital();
+            //dOrbital.Run();
 
 
             //画三个点
@@ -24,6 +26,8 @@
             //points.Run();
 
             //坐标
+            WorkSpace_Coordinate coordinate = new WorkSpace_Coordinate();
+            coordinate.Run();
 
         }
     }
