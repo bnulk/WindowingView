@@ -46,7 +46,8 @@ namespace WindowingView.StructureChemistry
                 double theta = random.NextDouble() * Math.PI;
                 double phi = random.NextDouble() * 2 * Math.PI;
 
-                double density = Rho_3dxy(r, theta,phi);
+                //double density = Rho_3dxy(r, theta,phi);
+                double density = Rho_3dz2(r, theta);
 
                 // 随机接受：按密度函数过滤
                 if (random.NextDouble() < density * 0.08)

@@ -20,15 +20,17 @@
             //WorkSpace_dOrbital dOrbital = new WorkSpace_dOrbital();
             //dOrbital.Run();
 
-
             //画三个点
             //WorkSpace_Points points = new WorkSpace_Points();
             //points.Run();
 
-            //坐标
-            WorkSpace_Coordinate coordinate = new WorkSpace_Coordinate();
-            coordinate.Run();
+            //给世界建立坐标
+            //WorkSpace_Coordinate coordinate = new WorkSpace_Coordinate();
+            //coordinate.Run();
 
+            //画d轨道，给世界建立坐标
+            WorkSpace_dOrbital_Coordinate dOrbitalCoordinate = new WorkSpace_dOrbital_Coordinate();
+            dOrbitalCoordinate.Run();
         }
     }
 }
