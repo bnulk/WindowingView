@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WindowingView": {
+      "commandName": "Project",
+      "workingDirectory": ".\\Work"
+    }
+  }
+}
