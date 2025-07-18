@@ -24,11 +24,9 @@ namespace WindowingView
         private uint _vbo;
         private uint _vao;
 
-
         public static Texture_StbImageSharp? texture; // 纹理封装
         private static Shader? shader;  // 着色器封装
 
-        private static Transform[] Transforms = new Transform[4];
 
         // 设置相机的位置，目标以及相机的右、上方向
         private static Vector3 CameraPosition = new Vector3(0.0f, 0.0f, 3.0f); // 相机位置
@@ -122,8 +120,8 @@ namespace WindowingView
         public void OnRender(double obj)
         {
             // 清屏
-            //_gl?.ClearColor(0.1f, 0.1f, 0.1f, 1f);
-            _gl?.ClearColor(1.0f, 1.0f, 1.0f, 1f);
+            _gl?.ClearColor(0.1f, 0.1f, 0.1f, 1f);
+            //_gl?.ClearColor(1.0f, 1.0f, 1.0f, 1f);
             _gl?.Clear(ClearBufferMask.ColorBufferBit);
 
             // 使用 shader 并绘制
@@ -220,7 +218,8 @@ void main()
 out vec4 FragColor;
 void main()
 {
-      FragColor = vec4(0.0, 0.0, 1.0, 1.0);
+      FragColor = vec4(1.0, 0.84, 0.0, 1.0);
+      //FragColor = vec4(0.0, 0.0, 1.0, 1.0);
 }";
 
 

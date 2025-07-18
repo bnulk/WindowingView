@@ -29,8 +29,12 @@
             //coordinate.Run();
 
             //画d轨道，给世界建立坐标
-            WorkSpace_dOrbital_Coordinate dOrbitalCoordinate = new WorkSpace_dOrbital_Coordinate();
-            dOrbitalCoordinate.Run();
+            //WorkSpace_dOrbital_Coordinate dOrbitalCoordinate = new WorkSpace_dOrbital_Coordinate();
+            //dOrbitalCoordinate.Run();
+
+            //摄像机
+            WorkSpace_Camera camera = new WorkSpace_Camera();
+            camera.Run();
         }
     }
 }

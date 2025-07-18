@@ -21,7 +21,6 @@ namespace WindowingView
         public static Texture_StbImageSharp? texture; // 纹理封装
         private static Shader? shader;  // 着色器封装
 
-        private static Transform[] Transforms = new Transform[4];
 
         // 设置相机的位置，目标以及相机的右、上方向
         private static Vector3 CameraPosition = new Vector3(0.0f, 0.0f, 3.0f); // 相机位置
