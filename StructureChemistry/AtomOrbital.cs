@@ -46,8 +46,42 @@ namespace WindowingView.StructureChemistry
                 double theta = random.NextDouble() * Math.PI;
                 double phi = random.NextDouble() * 2 * Math.PI;
 
-                //double density = Rho_3dxy(r, theta,phi);
-                double density = Rho_3dz2(r, theta);
+                double density = Rho_3dxy(r, theta,phi);
+                //double density = Rho_3dz2(r, theta);
+
+                // 随机接受：按密度函数过滤
+                if (random.NextDouble() < density * 0.08)
+                {
+                    // 球坐标 → 笛卡尔坐标
+                    float x = (float)(r * Math.Sin(theta) * Math.Cos(phi));
+                    float y = (float)(r * Math.Sin(theta) * Math.Sin(phi));
+                    float z = (float)(r * Math.Cos(theta));
+                    acceptedPoints.Add(new Vector3(x, y, z));
+                }
+            }
+
+            return acceptedPoints
+                .Select(p => new float[] { p.X, p.Y, p.Z })
+                .SelectMany(arr => arr)
+                .ToArray();
+        }
+
+        public static float[] GetDxyVertice()
+        {
+            int totalSamples = 100_000_000;
+            double rMax = 1.0;
+            Random random = new Random();
+            List<Vector3> acceptedPoints = new();
+
+            for (int i = 0; i < totalSamples; i++)
+            {
+                // 随机采样球坐标
+                double r = random.NextDouble() * rMax;
+                double theta = random.NextDouble() * Math.PI;
+                double phi = random.NextDouble() * 2 * Math.PI;
+
+                double density = Rho_3dxy(r, theta, phi);
+                //double density = Rho_3dz2(r, theta);
 
                 // 随机接受：按密度函数过滤
                 if (random.NextDouble() < density * 0.08)

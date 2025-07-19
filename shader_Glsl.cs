@@ -167,6 +167,58 @@ namespace WindowingView
 
 
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///                               环境光
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public static readonly string VertexShaderSource_AmbientLighting = @"
+        #version 330 core
+        layout (location = 0) in vec3 vPos;
+
+        uniform mat4 uModel;
+        uniform mat4 uView;
+        uniform mat4 uProjection;
+
+        void main()
+        {
+            gl_Position = uProjection * uView * uModel * vec4(vPos, 1.0);
+        }
+        ";
+
+        public static readonly string FragmentShaderSource_AmbientLighting = @"
+        #version 330 core
+        out vec4 FragColor;
+
+        void main()
+        {
+            FragColor = vec4(1.0f);
+        }
+        ";
+
+        public static readonly string LightingShaderSource_AmbientLighting = @"
+        #version 330 core
+        out vec4 FragColor;
+
+        uniform vec3 objectColor;
+        uniform vec3 lightColor;
+
+        void main()
+        {
+            float ambientStrength = 0.3;
+            vec3 ambient = ambientStrength * lightColor;
+            vec3 result = ambient * objectColor;
+
+            FragColor = vec4(result, 1.0);
+}
+        ";
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///                               环境光     结束
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 

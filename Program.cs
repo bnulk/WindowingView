@@ -33,8 +33,12 @@
             //dOrbitalCoordinate.Run();
 
             //摄像机
-            WorkSpace_Camera camera = new WorkSpace_Camera();
-            camera.Run();
+            //WorkSpace_Camera camera = new WorkSpace_Camera();
+            //camera.Run();
+
+            //环境光
+            WorkSpace_AmbientLighting ambientLighting = new WorkSpace_AmbientLighting();
+            ambientLighting.Run();
         }
     }
 }
